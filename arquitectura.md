@@ -8,4 +8,4 @@ Este sistema en la nube permite gestionar archivos corporativos y usuarios desde
 - Base de datos
 
 ## Seguridad
-Pendiente de definir.
+Se definen políticas base de acceso, respaldo y auditoría.
