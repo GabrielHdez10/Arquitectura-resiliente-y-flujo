@@ -9,3 +9,4 @@ Este sistema en la nube permite gestionar archivos corporativos y usuarios desde
 
 ## Seguridad
 Se definen políticas base de acceso, respaldo y auditoría.
+Se documentan controles operativos para el monitoreo del sistema.
