@@ -1,1 +1,2 @@
-este es un ejemplo para ver como funciona la simulación de GitHub flow
+este es un ejemplo para ver como funciona la simulación de GitHub Flow
+Esta es una mejora
