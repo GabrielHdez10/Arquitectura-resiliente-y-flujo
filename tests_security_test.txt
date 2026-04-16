@@ -1,0 +1,2 @@
+Archivo de prueba sin secretos reales.
+Se eliminó el token simulado para cumplir con Push Protection.
