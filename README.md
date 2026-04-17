@@ -1,0 +1,1 @@
+[![CI Docs](https://github.com/GabrielHdez10/Arquitectura-resiliente-y-flujo/actions/workflows/ci-docs.yml/badge.svg?branch=main)](https://github.com/GabrielHdez10/Arquitectura-resiliente-y-flujo/actions/workflows/ci-docs.yml)
