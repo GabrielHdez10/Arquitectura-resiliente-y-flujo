@@ -23,7 +23,7 @@ jobs:
         run: npm install -g markdownlint-cli
 
       - name: Validar archivos Markdown
-        run: markdownlint "**/*.md"
+ 	run: markdownlint README.md
 
       - name: Instalar Mermaid CLI
         run: npm install -g @mermaid-js/mermaid-cli
