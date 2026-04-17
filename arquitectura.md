@@ -32,5 +32,3 @@ Este documento describe la arquitectura general del proyecto y sus componentes p
 
 \- Cifrado de información
 
-
-
