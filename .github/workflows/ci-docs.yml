@@ -1,0 +1,65 @@
+name: CI Docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar markdownlint
+        run: npm install -g markdownlint-cli
+
+      - name: Validar archivos Markdown
+        run: markdownlint "**/*.md"
+
+      - name: Instalar Mermaid CLI
+        run: npm install -g @mermaid-js/mermaid-cli
+
+      - name: Validar sintaxis de Mermaid
+        shell: bash
+        run: |
+          found=0
+          mkdir -p mermaid-temp
+
+          while IFS= read -r file; do
+            awk '
+              /^```mermaid/ {in_block=1; block=""; next}
+              /^```$/ && in_block {in_block=0; print block; print "===END==="; next}
+              in_block {block = block $0 "\n"}
+            ' "$file" > mermaid-temp/output.txt
+
+            c=0
+            buffer=""
+            while IFS= read -r line; do
+              if [ "$line" = "===END===" ]; then
+                found=1
+                echo -e "$buffer" > "mermaid-temp/diagram_$c.mmd"
+                mmdc -i "mermaid-temp/diagram_$c.mmd" -o "mermaid-temp/diagram_$c.svg"
+                c=$((c+1))
+                buffer=""
+              else
+                buffer="${buffer}${line}\n"
+              fi
+            done < mermaid-temp/output.txt
+
+          done < <(find . -name "*.md")
+
+          if [ "$found" -eq 0 ]; then
+            echo "No se encontraron diagramas Mermaid, paso validado."
+          fi
+
+      - name: Confirmar éxito
+        run: echo "Workflow completado correctamente."
