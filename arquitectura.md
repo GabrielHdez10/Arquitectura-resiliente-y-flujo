@@ -1,34 +1,36 @@
-# \# Arquitectura del sistema
+\# Arquitectura del sistema
 
-# 
 
-# Este documento describe la arquitectura general del proyecto y sus componentes principales.
 
-# 
+Este documento describe la arquitectura general del proyecto y sus componentes principales.
 
-# \## Componentes
 
-# 
 
-# \- Frontend web
+\## Componentes
 
-# \- Backend de servicios
 
-# \- Base de datos
 
-# \- Módulo de autenticación
+\- Frontend web
 
-# 
+\- Backend de servicios
 
-# \## Seguridad
+\- Base de datos
 
-# 
+\- Módulo de autenticación
 
-# \- Control de acceso
 
-# \- Validación de entradas
 
-# \- Protección de credenciales
+\## Seguridad
 
-# \- Cifrado de información
+
+
+\- Control de acceso
+
+\- Validación de entradas
+
+\- Protección de credenciales
+
+\- Cifrado de información
+
+
 
